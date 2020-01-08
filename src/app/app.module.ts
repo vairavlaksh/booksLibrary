@@ -6,6 +6,7 @@ import { StoreModule } from '@ngrx/store';
 
 import { AppComponent } from './components/app/app.component';
 import { metaReducers, reducers } from './modules/reducers';
+import { MainComponent } from './components/main/main.component';
 
 const appRoutes: Routes = [
   {
@@ -17,7 +18,7 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, MainComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
