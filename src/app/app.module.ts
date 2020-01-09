@@ -1,5 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
@@ -37,6 +38,7 @@ const appRoutes: Routes = [
       logOnly: environment.production,
     }),
     StoreRouterConnectingModule.forRoot(),
+    MatSidenavModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
