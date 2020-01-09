@@ -15,6 +15,7 @@ import { AppComponent } from './components/app/app.component';
 import { MainComponent } from './components/main/main.component';
 import { BooksEffects } from './modules/books/books.effects';
 import { HeaderComponent } from './components/header/header.component';
+import { BooksListComponent } from './components/books-list/books-list.component';
 
 const appRoutes: Routes = [
   {
@@ -26,7 +27,7 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, MainComponent, HeaderComponent],
+  declarations: [AppComponent, MainComponent, HeaderComponent, BooksListComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
