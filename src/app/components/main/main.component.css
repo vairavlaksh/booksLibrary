@@ -6,3 +6,8 @@
   right: 0;
   background: #eee;
 }
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+}
