@@ -12,10 +12,11 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { appReducers } from './app.reducers';
 import { AppComponent } from './components/app/app.component';
+import { BooksListComponent } from './components/books-list/books-list.component';
+import { HeaderComponent } from './components/header/header.component';
 import { MainComponent } from './components/main/main.component';
 import { BooksEffects } from './modules/books/books.effects';
-import { HeaderComponent } from './components/header/header.component';
-import { BooksListComponent } from './components/books-list/books-list.component';
+import { SideBarComponent } from './components/side-bar/side-bar.component';
 
 const appRoutes: Routes = [
   {
@@ -27,7 +28,13 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, MainComponent, HeaderComponent, BooksListComponent],
+  declarations: [
+    AppComponent,
+    MainComponent,
+    HeaderComponent,
+    BooksListComponent,
+    SideBarComponent,
+  ],
   imports: [
     BrowserModule,
     HttpClientModule,
