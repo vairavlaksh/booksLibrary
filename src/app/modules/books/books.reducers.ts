@@ -1,4 +1,5 @@
-import { BooksActions, GET_BOOKS_SUCCESS } from './books.actions';
+import { addBook, parseBooksList } from '../../app.utils';
+import { ADD_BOOKS, BooksActions, GET_BOOKS_SUCCESS } from './books.actions';
 import { BooksState, initialBooksState } from './books.state';
 
 export const booksReducers = (
@@ -9,8 +10,17 @@ export const booksReducers = (
     case GET_BOOKS_SUCCESS:
       return {
         ...state,
-        books: action.books,
+        books: parseBooksList(action.books),
       };
+    case ADD_BOOKS:
+      const { newId, newBookData } = addBook(action.book);
+      const newBooks = { ...state.books };
+      newBooks[newId] = newBookData;
+      return {
+        ...state,
+        books: newBooks,
+      };
+
     default:
       return state;
   }
