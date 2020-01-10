@@ -1,0 +1,16 @@
+BOOKS LIBRARY - VERSION 0.0.1
+
+* Create New Book => Provides options to create a new book with Title, Authors(comma seperated for multiple authors), publishers, published(default to current date)
+* All Books => Provides list of books fetched from the google api and also the books added in that particular session
+* Books Card => On clicking each card, provides the detailed view of the selected card
+* Free Sample => On Clicking leads to the web view of sample book in new tab
+* Ebook => On Clicking leads to the google play store page to buy the book in new tab
+* Search => Provides the list of books available as of now (Search and filter books to be implemented in the upcoming versions)
+* SideBar => Placeholder containing dummy menu
+* Menu Button in SideBar => On clicking will toggle the SideBar
+* Home Icon in Header => Visible only in detailed book page, will redirect to the all books page
+
+KNOWN ISSUES:
+
+* Search bar feature to be implemented
+* Create New Button will default to the constants added. In future, may add all fields in the form itself upon request
