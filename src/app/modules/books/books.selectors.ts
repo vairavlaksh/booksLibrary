@@ -9,3 +9,6 @@ export const selectBooksList = createSelector(
   selectBooks,
   (state: BooksState) => state.books,
 );
+
+export const selectBookById = (id: string) =>
+  createSelector(selectBooksList, books => books[id]);
