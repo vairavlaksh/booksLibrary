@@ -16,6 +16,7 @@ import { BooksListComponent } from './components/books-list/books-list.component
 import { HeaderComponent } from './components/header/header.component';
 import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { BooksEffects } from './modules/books/books.effects';
+import { BookDetailComponent } from './components/book-detail/book-detail.component';
 
 const appRoutes: Routes = [
   {
@@ -32,6 +33,7 @@ const appRoutes: Routes = [
     HeaderComponent,
     BooksListComponent,
     SideBarComponent,
+    BookDetailComponent,
   ],
   imports: [
     BrowserModule,
