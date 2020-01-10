@@ -1,1 +1,11 @@
-<router-outlet></router-outlet>
+<mat-sidenav-container class="example-container" autosize>
+  <mat-sidenav mode="side" opened>
+      <app-side-bar></app-side-bar>
+  </mat-sidenav>
+  <mat-sidenav-content class="main-drawer">
+    <div class="main-content">
+      <app-header></app-header>
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
