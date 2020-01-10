@@ -1,5 +1,4 @@
-export interface Book {
-  id: string;
+export interface BookDetails {
   title: string;
   subtitle: string;
   authors: string[];
@@ -17,4 +16,16 @@ export interface Book {
   isPdfAvailable: boolean;
   pdfLink: string;
   sampleLink: string;
+}
+
+export interface Book {
+  [id: string]: BookDetails;
+}
+
+export interface BookBasicDetails {
+  id: string;
+  title: string;
+  authors: string;
+  publisher: string;
+  publishedDate: string;
 }
