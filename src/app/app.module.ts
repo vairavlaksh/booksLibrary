@@ -35,6 +35,10 @@ const appRoutes: Routes = [
     path: 'books',
     component: BooksListComponent,
   },
+  {
+    path: 'book/:id',
+    component: BookDetailComponent,
+  },
   { path: '', redirectTo: '/books', pathMatch: 'full' },
   { path: '**', component: BooksListComponent },
 ];
