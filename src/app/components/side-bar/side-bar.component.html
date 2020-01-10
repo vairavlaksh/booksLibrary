@@ -1,1 +1,15 @@
-<p>side-bar works!</p>
+<mat-nav-list class="nav-list">
+  <div class="sidebar-list">
+    <mat-icon (click)="toggleSideBar = !toggleSideBar" class="icons menu-icon">menu</mat-icon>
+    <span class="side-text" [hidden]="toggleSideBar">MENU</span>
+  </div>
+  <div class="sidebar-list">
+    <mat-icon class="icons">library_books</mat-icon>
+    <span class="side-text" [hidden]="toggleSideBar">CONTENT MANAGEMENT</span>
+    <span [hidden]="toggleSideBar"><mat-icon >arrow_drop_down</mat-icon></span>
+  </div>
+  <div class="sidebar-list">
+    <mat-icon class="icons">library_books</mat-icon>
+    <span class="side-text" [hidden]="toggleSideBar">COURSES</span>
+  </div>
+</mat-nav-list>

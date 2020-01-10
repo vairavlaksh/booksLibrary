@@ -1,0 +1,20 @@
+.sidebar-list {
+  display: flex;
+  justify-content: flex-start;
+  height: 40px;
+  align-items: center;
+}
+
+.side-text {
+  font-size: 12px;
+  color: gray;
+  padding: 12px;
+}
+
+.icons {
+  margin: 12px;
+}
+
+.menu-icon {
+  cursor: pointer;
+}
