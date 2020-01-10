@@ -14,23 +14,21 @@ import { appReducers } from './app.reducers';
 import { AppComponent } from './components/app/app.component';
 import { BooksListComponent } from './components/books-list/books-list.component';
 import { HeaderComponent } from './components/header/header.component';
-import { MainComponent } from './components/main/main.component';
-import { BooksEffects } from './modules/books/books.effects';
 import { SideBarComponent } from './components/side-bar/side-bar.component';
+import { BooksEffects } from './modules/books/books.effects';
 
 const appRoutes: Routes = [
   {
-    path: 'main',
-    component: MainComponent,
+    path: 'books',
+    component: BooksListComponent,
   },
-  { path: '', redirectTo: '/main', pathMatch: 'full' },
-  { path: '**', component: MainComponent },
+  { path: '', redirectTo: '/books', pathMatch: 'full' },
+  { path: '**', component: BooksListComponent },
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainComponent,
     HeaderComponent,
     BooksListComponent,
     SideBarComponent,
