@@ -1,8 +1,16 @@
 .header {
   background-color: #fff;
-  padding: 12px;
+  padding: 12px 32px;
+  height: 5vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
 img {
   height: 40px;
+}
+
+.home-icon {
+  cursor: pointer;
 }
