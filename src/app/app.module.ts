@@ -25,10 +25,10 @@ import { appReducers } from './app.reducers';
 import { AppComponent } from './components/app/app.component';
 import { BookDetailComponent } from './components/book-detail/book-detail.component';
 import { BooksListComponent } from './components/books-list/books-list.component';
+import { CreateBookComponent } from './components/create-book/create-book.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { BooksEffects } from './modules/books/books.effects';
-import { CreateBookComponent } from './components/create-book/create-book.component';
 
 const appRoutes: Routes = [
   {
@@ -77,5 +77,6 @@ const appRoutes: Routes = [
   ],
   providers: [],
   bootstrap: [AppComponent],
+  entryComponents: [CreateBookComponent],
 })
 export class AppModule {}
