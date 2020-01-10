@@ -1,0 +1,46 @@
+.books-list {
+  height: 95vh;
+  padding: 32px;
+  padding-bottom: 0px;
+}
+
+.main-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 10vh;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  height: 75vh;
+}
+
+.main-search {
+  height: 10vh;
+}
+
+.main-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: 65vh;
+  overflow-y: auto;
+}
+.book-card {
+  margin: 10px 0px;
+  width: 36vw;
+  height: 15vh;
+  box-shadow: 2px 4px rgba(0, 0, 0, .2);
+  border-left: 8px #FC9423 solid;
+}
+
+.create-button {
+  width: 10vw;
+  height: 5vh;
+}
+
+.card-content {
+  display: flex;
+}

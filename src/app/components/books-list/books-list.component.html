@@ -1,1 +1,33 @@
-<p>books-list works!</p>
+<div class="books-list">
+  <div class="main-top">
+    <h1>Books</h1>
+    <button class="create-button" mat-flat-button color="primary" (click)='openCreateForm()'>Create New Book</button>
+  </div>
+  <div class="main-search">
+    <mat-form-field>
+      <mat-icon matPrefix>search</mat-icon>
+      <input matInput type="search" [matAutocomplete]="auto" placeholder="Search" #books />
+    </mat-form-field>
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let bookTitle of booksTitle" [value]="bookTitle" class="book">
+        <span class="book-name">{{ bookTitle }}</span>
+      </mat-option>
+    </mat-autocomplete>
+  </div>
+  <div class="main-content">
+    <h4>All Books</h4>
+    <div *ngIf="booksData.length; else noBooks" class="main-cards">
+      <mat-card class="book-card" *ngFor="let bookData of booksData" (click)="updateSelectedBook(bookData.id)">
+        <mat-card-title>{{ bookData.title }}</mat-card-title>
+        <mat-card-content>
+          <p *ngIf="bookData.authors !== ''">Authors: {{ bookData.authors }}</p>
+          <p *ngIf="bookData.publisher">publisher: {{ bookData.publisher }}</p>
+          <p *ngIf="bookData.publishedDate">Published Date: {{ bookData.publishedDate }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <ng-template #noBooks>
+      Sorry, No Books Found
+    </ng-template>
+  </div>
+</div>
