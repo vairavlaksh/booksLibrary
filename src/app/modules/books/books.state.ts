@@ -1,7 +1,7 @@
-import { Book } from '../book/book.models';
+import { Book } from '../../app.models';
 
 export interface BooksState {
-  books: Book[];
+  books: Book;
 }
 
 export const initialBooksState: BooksState = {

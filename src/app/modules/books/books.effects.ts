@@ -17,7 +17,6 @@ export class BooksEffects {
   getBooks = this.actions$.pipe(
     ofType(GET_BOOKS),
     switchMap(() => {
-      console.log('catching here');
       return this.http.get(this.getBooksUrl).pipe(
         map(books => new GetBooksSuccess(books)),
         catchError(error => of(new GetBooksFailure(error))),
