@@ -33,7 +33,7 @@ export const parseBooksList = booksData => {
 };
 
 export const addBook = basicBookData => {
-  const newId = Math.random() * 1000 + 'abc';
+  const newId = Math.floor(Math.random() * 1000) + 'abc';
   const newBookData: BookDetails = {
     title: basicBookData.title,
     subtitle: '',
