@@ -1,4 +1,6 @@
-BOOKS LIBRARY - VERSION 0.0.1
+BOOKS LIBRARY
+
+VERSION 0.0.1
 
 * Create New Book => Provides options to create a new book with Title, Authors(comma seperated for multiple authors), publishers, published(default to current date)
 * All Books => Provides list of books fetched from the google api and also the books added in that particular session
@@ -10,7 +12,17 @@ BOOKS LIBRARY - VERSION 0.0.1
 * Menu Button in SideBar => On clicking will toggle the SideBar
 * Home Icon in Header => Visible only in detailed book page, will redirect to the all books page
 
+VERSION 0.1.0
+
+Features
+
+* Search => User can search for particular book, the filtered book title will come as dropdown. Upon clicking the title, it'll open the detailed book page.
+
+Fixes
+
+- Inserted INR Symbol before price amounts in detail book page
+- Round off Randomly generated book id to integer value for newly created book
+
 KNOWN ISSUES:
 
-* Search bar feature to be implemented
 * Create New Button will default to the constants added. In future, may add all fields in the form itself upon request
