@@ -3,6 +3,8 @@ import { FormControl } from '@angular/forms';
 import { MatDialog } from '@angular/material';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { map, startWith } from 'rxjs/operators';
 
 import { Book, BookBasicDetails } from '../../app.models';
 import { AppState } from '../../app.state';
@@ -19,8 +21,9 @@ import { CreateBookComponent } from '../create-book/create-book.component';
 export class BooksListComponent implements OnInit {
   books: Book;
   booksForm = new FormControl();
-  booksTitle: string[] = [];
+  searchControl = new FormControl();
   booksData: BookBasicDetails[] = [];
+  filteredValues: Observable<BookBasicDetails[]>;
 
   constructor(
     private store$: Store<AppState>,
@@ -30,10 +33,8 @@ export class BooksListComponent implements OnInit {
     this.store$.select(selectBooksList).subscribe(booksData => {
       this.books = booksData;
       if (this.books) {
-        this.booksTitle = [];
         this.booksData = [];
         Object.keys(this.books).forEach(key => {
-          this.booksTitle.push(this.books[key].title);
           this.booksData.push({
             id: key,
             title: this.books[key].title,
@@ -45,6 +46,13 @@ export class BooksListComponent implements OnInit {
             publishedDate: this.books[key].publishedDate,
           });
         });
+        this.filteredValues = this.searchControl.valueChanges.pipe(
+          startWith(''),
+          map(value => (typeof value === 'string' ? value : value.name)),
+          map(title =>
+            title ? this.filterSearch(title) : this.booksData.slice(),
+          ),
+        );
       }
     });
   }
@@ -57,6 +65,14 @@ export class BooksListComponent implements OnInit {
     this.dialog.open(CreateBookComponent, {
       data: initialNewBookData,
     });
+  };
+
+  filterSearch = (title: string) => {
+    const filterValue = title.toLowerCase();
+
+    return this.booksData.filter(
+      data => data.title.toLowerCase().indexOf(filterValue) === 0,
+    );
   };
 
   ngOnInit() {

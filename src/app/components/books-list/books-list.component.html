@@ -6,11 +6,11 @@
   <div class="main-search">
     <mat-form-field>
       <mat-icon matPrefix>search</mat-icon>
-      <input matInput type="search" [matAutocomplete]="auto" placeholder="Search" #books />
+      <input matInput type="search" [matAutocomplete]="auto" placeholder="Search" #books [formControl]="searchControl"/>
     </mat-form-field>
     <mat-autocomplete #auto="matAutocomplete">
-      <mat-option *ngFor="let bookTitle of booksTitle" [value]="bookTitle" class="book">
-        <span class="book-name">{{ bookTitle }}</span>
+      <mat-option *ngFor="let filteredValue of filteredValues | async" [value]="filteredValue.title" class="book" (click)="updateSelectedBook(filteredValue.id)">
+        <span class="book-name">{{ filteredValue.title }}</span>
       </mat-option>
     </mat-autocomplete>
   </div>
