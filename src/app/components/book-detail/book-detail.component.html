@@ -13,7 +13,7 @@
         <div  *ngIf="book?.publisher">{{book?.publisher}}</div>
       </div>
       <div class="buy-buttons">
-        <button class="buy-button" mat-flat-button color="primary" (click)="openSample('buy')" *ngIf="book?.buyLink"><span class="strike">{{book?.price}}</span> {{book.discountedPrice}} Ebook</button>
+        <button class="buy-button" mat-flat-button color="primary" (click)="openSample('buy')" *ngIf="book?.buyLink"><span class="strike">&#8377;{{book?.price}}</span> &#8377;{{book.discountedPrice}} Ebook</button>
         <button class="buy-button" mat-flat-button color="primary" *ngIf="!book?.buyLink" disabled>Not For Sale</button>
         <button class="buy-button" mat-flat-button color="primary" *ngIf="book?.sampleLink" (click)="openSample('sample')">Free Sample</button>
       </div>
